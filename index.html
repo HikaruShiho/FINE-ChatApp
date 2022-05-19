@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>FINE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="”googlebot”" content="”noindex”" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <div id="screen">
+					<div class="screen_in">
+						<div id="chat_screen" class="__common_wrap__">
+							<div class="chat_screen_in">
+								<div id="upper_bar">
+									<ul>
+										<li class="nav_area">
+											<button id="nav_btn">...</button>
+										</li>
+										<li class="title_area">
+											G's ACADEMY LAB-13th 雑談部屋
+										</li>
+									</ul>
+								</div>
+								<ul id="chat_message"></ul>
+								<div id="lower_bar">
+									<ul>
+										<li class="input_area">
+											<textarea id="message" row="1" col="20" autofocus></textarea>
+										</li>
+										<li class="submit_area">
+											<button id="submit_btn" data-action="click"></button>
+										</li>
+									</ul>
+								</div>
+								<nav id="nav_menu">
+									<div id="auth_name_change">
+										<div class="auth_name_change_in">
+											<input type="text" id="display_name" placeholder="名前を入力">
+											<button id="dispay_name_change_btn">変更</button>
+										</div>
+									</div>
+									<ul>
+										<li id="logout_btn">ログアウト</li>
+										<li id="display_name_change">表示名変更</li>
+										<li id="user_delete_btn">アカウント削除</li>
+										<li class="coming_soon">工事中・・・</li>
+										<li class="coming_soon">工事中・・・</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<div id="auth_screen" class="__common_wrap__">
+							<div class="auth_screen_in">
+								<div class="auth_wrap">
+									<h1 class="logo">FINE</h1>
+									<div class="input_area">
+										<ul class="tab_wrap">
+											<li class="tab_btn active">ログイン</li>
+											<li class="tab_btn">サインアップ</li>
+										</ul>
+										<ul class="input_wrap">
+											<li>
+												<input type="email" name="email" id="email" placeholder="メールアドレス" />
+											</li>
+											<li>
+												<input type="password" name="password" id="password" placeholder="パスワード" />
+											</li>
+										</ul>
+									</div>
+									<p id="error_message"></p>
+									<ul>
+										<li class="auth_btn is-show">
+											<button id="login_btn">ログイン</button>
+										</li>
+										<li class="auth_btn">
+											<button id="register_btn">登録</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="loading_screen">
+							<span>FINE</span>
+						</div>
+					</div>
+				</div>
+			</main>
+			<audio src="./sounds/sound_submit.mp3" id="sound_submit"></audio>
+		</div>
+		<script src="./js/gsap/gsap.min.js"></script>
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>

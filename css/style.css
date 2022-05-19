@@ -1,0 +1,689 @@
+@charset "utf-8";
+
+body {
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+    background-color: #f0f0f0;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/*----------------------------
+    z-index
+----------------------------*/
+#loading_screen {
+    z-index: 50;
+}
+
+#overlay {
+    z-index: 40;
+}
+
+#upper_bar,
+#lower_bar {
+    z-index: 30;
+}
+
+#nav_menu>ul {
+    z-index: 20;
+}
+
+#auth_name_change {
+    z-index: 10;
+}
+
+/*----------------------------
+    Layout
+----------------------------*/
+#container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+}
+
+#container>main {
+    width: 852px;
+    height: 567px;
+    background-image: url("../images/ipad.png");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+/*----------------------------
+    Common parts
+----------------------------*/
+.__common_wrap__ {
+    width: 100%;
+    height: 100%;
+}
+
+/*----------------------------
+    Base screen
+----------------------------*/
+#screen {
+    width: 680px;
+    height: 510px;
+    background-image: url("../images/bg_line.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    top: 30px;
+    left: 86px;
+}
+
+#screen .screen_in {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/*----------------------------
+    overlay
+----------------------------*/
+#overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.95);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*----------------------------
+    Loading screen
+----------------------------*/
+#loading_screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #02d302;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#loading_screen>span {
+    font-size: 72px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
+}
+
+/*----------------------------
+    Nav menu
+----------------------------*/
+#nav_menu {
+    width: 200px;
+    height: 100%;
+    padding-top: 44px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+}
+
+#nav_menu.nav-open {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+}
+
+#nav_menu>ul {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 6px -20px 20px -10px rgba(0, 0, 0, 0.3);
+}
+
+#nav_menu>ul>li {
+    width: 100%;
+    line-height: 36px;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 14px;
+    color: #4b4b4b;
+    padding-left: 12px;
+    cursor: pointer;
+}
+
+#nav_menu>ul>li.coming_soon {
+    background-color: #cecece;
+    color: #acacac;
+    pointer-events: none;
+}
+
+#auth_name_change {
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+}
+
+.nav-open #auth_name_change.change_user_name-open {
+    left: 200px;
+}
+
+#auth_name_change .auth_name_change_in {
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+    padding-right: 16px;
+    padding-left: 16px;
+    background-color: #fff;
+}
+
+#auth_name_change .auth_name_change_in>input {
+    display: block;
+    width: 100%;
+    height: 29px;
+    font-size: 14px;
+    padding-right: 12px;
+    padding-left: 12px;
+    border: 1px solid #c8c8c8;
+}
+
+#auth_name_change .auth_name_change_in>button {
+    width: 100%;
+    line-height: 25px;
+    margin-top: 12px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #02d302;
+    background-color: #02d302;
+    cursor: pointer;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+}
+
+#auth_name_change .auth_name_change_in>button:hover {
+    color: #02d302;
+    background-color: #fff;
+}
+
+/*----------------------------
+    Chat screen
+----------------------------*/
+#chat_screen {
+    display: block;
+}
+
+#chat_screen .chat_screen_in {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#chat_screen .chat_screen_in::-webkit-scrollbar {
+    display: none;
+}
+
+#chat_message {
+    width: 100%;
+    height: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 44px;
+    padding-bottom: 44px;
+    overflow: auto;
+    -webkit-overflow-style: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#chat_message::-webkit-scrollbar {
+    display: none;
+}
+
+#chat_message>li {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#chat_message>li>dl {
+    max-width: 50%;
+    display: table;
+    position: relative;
+}
+
+#chat_message>li>dl.myself_message {
+    cursor: pointer
+}
+
+/* #chat_message>li>dl::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+} */
+
+#chat_message>li>dl::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4px 14px 4px;
+    border-color: transparent transparent #02d302 transparent;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    position: absolute;
+    top: -4px;
+    right: -2px;
+}
+
+#chat_message>li.friend>dl::before {
+    border-color: transparent transparent #fff transparent;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    top: 2px;
+    left: 34px;
+}
+
+#chat_message>li>dl>dt {
+    display: table-cell;
+    vertical-align: bottom;
+    font-size: 10px;
+    color: #fff;
+    padding-right: 6px;
+}
+
+#chat_message>li.friend>dl>dt {
+    padding-right: 0;
+    padding-left: 6px;
+}
+
+#chat_message>li>dl>dd.text {
+    display: table-cell;
+    vertical-align: bottom;
+    font-size: 14px;
+    color: #4b4b4b;
+    line-height: 1.3;
+    background-color: #02d302;
+    border-radius: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 8px;
+    padding-left: 8px;
+    position: relative;
+    white-space: pre-wrap;
+}
+
+#chat_message>li.friend>dl>dd.text {
+    background-color: #fff;
+}
+
+#chat_message>li.friend>dl>dd.text>span {
+    display: block;
+    width: 200px;
+    font-size: 10px;
+    color: #fff;
+    line-height: 1;
+    position: absolute;
+    top: -14px;
+    left: 0;
+}
+
+#chat_message>li.friend>dl>dd.icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: top;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-top: -12px;
+    position: relative;
+}
+
+
+#upper_bar {
+    width: 100%;
+    background-color: hsla(222, 34%, 34%, 0.98);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#upper_bar>ul {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    padding-right: 6px;
+    padding-left: 6px;
+    position: relative;
+}
+
+#upper_bar>ul>li {
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+#upper_bar>ul>li.title_area {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* #upper_bar>ul>li.logout_area {
+    position: absolute;
+    right: 4px;
+    top: 10px;
+}
+
+#upper_bar>ul>li.logout_area>button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+} */
+
+#upper_bar>ul>li.nav_area {
+    position: absolute;
+    left: 4px;
+    top: 6px;
+}
+
+#upper_bar>ul>li.nav_area>button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: #fff;
+    padding: 0;
+    font-weight: bold;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#lower_bar {
+    width: 100%;
+    /* height: 44px; */
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+    background-color: #f4f4f4;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+#lower_bar>ul {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+}
+
+#lower_bar>ul>li {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+#lower_bar>ul>li.input_area>textarea {
+    width: 300px;
+    height: 26px;
+    min-height: 26px;
+    max-height: 92px !important;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: 1px solid #c8c8c8;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    resize: none;
+}
+
+#lower_bar>ul>li.submit_area>button {
+    width: 22px;
+    height: 22px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    background-image: url("../images/icon_submit.png");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin-top: 1px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    cursor: pointer;
+}
+
+
+/*----------------------------
+    Auth screen
+----------------------------*/
+#auth_screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 247, 247);
+}
+
+#auth_screen .auth_screen_in {
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+}
+
+#auth_screen .auth_screen_in .auth_wrap {
+    width: 340px;
+}
+
+#auth_screen .auth_screen_in .auth_wrap .logo {
+    color: #02d302;
+    line-height: 1;
+    font-size: 54px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
+    padding-bottom: 22px;
+}
+
+#auth_screen .auth_screen_in .auth_wrap .input_area {
+    width: 100%;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+}
+
+#auth_screen .auth_screen_in .auth_wrap .input_area>ul {
+    width: 100%;
+}
+
+#auth_screen .auth_screen_in .auth_wrap .input_area>ul.tab_wrap {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+}
+
+#auth_screen .auth_screen_in .auth_wrap .input_area>ul.tab_wrap>li {
+    width: 50%;
+    line-height: 48px;
+    color: #b1b1b1;
+    background-color: rgb(227, 227, 227);
+    text-align: center;
+    cursor: pointer;
+}
+
+#auth_screen .auth_screen_in .auth_wrap .input_area>ul.tab_wrap>li.active {
+    background-color: #fff;
+    color: #4b4b4b;
+}
+
+#auth_screen .auth_screen_in .auth_wrap .input_area>ul.tab_wrap>li:first-child {
+    border-right: 1px solid #e1e1e1;
+}
+
+#auth_screen .auth_screen_in .auth_wrap .input_area>ul.input_wrap>li {
+    border-top: 1px solid #e1e1e1;
+}
+
+#auth_screen .auth_screen_in .auth_wrap .input_area>ul.input_wrap>li>input {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    padding-right: 12px;
+    padding-left: 12px;
+    border: none;
+}
+
+#auth_screen .auth_screen_in .auth_wrap>ul {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    padding-top: 32px;
+}
+
+#auth_screen .auth_screen_in .auth_wrap>ul>li {
+    display: none;
+    width: 100%;
+}
+
+#auth_screen .auth_screen_in .auth_wrap>ul>li.is-show {
+    display: block;
+}
+
+#auth_screen .auth_screen_in .auth_wrap>ul>li>button {
+    width: 100%;
+    line-height: 48px;
+    font-size: 16px;
+    background-color: #02d302;
+    color: #fff;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+#error_message {
+    display: none;
+    font-size: 14px;
+    color: #dc2d2d;
+    text-align: center;
+    padding-top: 12px;
+}
+
+/*==================================================
+
+	Media Queries for window size under1200px
+
+====================================================*/
+@media screen and (max-width: 1200px) {
+    body {
+        width: 950px;
+    }
+}
