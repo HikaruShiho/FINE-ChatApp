@@ -331,7 +331,6 @@ const deleteAccount = function () {
  * @param { UserObject } user
  */
 const observeLoginUser = function (user) {
-	console.log("発火");
 	document.getElementById("nav_menu").classList.remove('nav-open');
 	document.getElementById("auth_name_change").classList.remove('change_user_name-open');
 	if (user) {
